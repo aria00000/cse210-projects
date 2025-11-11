@@ -1,6 +1,10 @@
 using System;
-using System.IO; 
+using System.Collections.Generic;
+using System.IO;
 
+
+//for the creative part
+//Add the serch function that searches entries by keyword
 class Program
 {
     static void Main(string[] args)
@@ -15,8 +19,6 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            //for the creative part
-            //Add the serch function that searches entries by keyword
             Console.WriteLine("5. Search");
             Console.WriteLine("6. Quit");
             Console.WriteLine("What would you like to do?");
