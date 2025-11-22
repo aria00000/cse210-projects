@@ -12,6 +12,24 @@ public class Entry
         _date = date;
     }
 
+    public void Display()
+    {
+        Console.WriteLine($"Date: {_date} - Prompt: {_prompt}");
+        Console.WriteLine(_response);
+        Console.WriteLine();
+    }
+
+    public string Serialize()
+    {
+        return $"{_date}|{_prompt}|{_response}";
+    }
+
+    public static Entry Deserialize(string line)
+    {
+        string[] parts = line.Split("|");
+        return new Entry(parts[1], parts[2], parts[0]);
+    }
+
 
 
     public static string GetRandomPrompt()

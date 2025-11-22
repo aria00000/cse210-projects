@@ -12,9 +12,7 @@ public class Journal
     {
         foreach (Entry entry in _entries)
         {
-            Console.WriteLine($"Date:{entry._date} - Prompt: {entry._prompt}");
-            Console.WriteLine(entry._response);
-            Console.WriteLine();
+            entry.Display();
         }
     }
 
@@ -24,9 +22,7 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"Date:{entry._date} - Prompt: {entry._prompt}");
-                outputFile.WriteLine(entry._response);
-                outputFile.WriteLine();
+                outputFile.WriteLine(entry.Serialize());
             }
         }
     }
@@ -48,9 +44,7 @@ public class Journal
         {
             if (entry._response.Contains(keyword) || entry._prompt.Contains(keyword))
             {
-                Console.WriteLine($"Date:{entry._date} - Prompt: {entry._prompt}");
-                Console.WriteLine(entry._response);
-                Console.WriteLine();
+                entry.Display();
             }
         }
     }
