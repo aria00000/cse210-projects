@@ -22,16 +22,16 @@ Menu（`Program.cs`:
 - `7) Quit`
 
 **Design and Main Source Files**
-- [Program.cs](final/FinalProject/Program.cs#L1) - Entry point; provides a simple console-based UI(menu)
-- [BudgetManager.cs](final/FinalProject/BudgetManager.cs#L1) - Manages transactions, categories, accounts, budgets, and report generation 
-- [Category.cs](final/FinalProject/Category.cs#L1) - Represents categories
-- [CategoryBudget.cs](final/FinalProject/CategoryBudget.cs#L1) - Monthly budgets per category
-- [Account.cs](final/FinalProject/Account.cs#L1) - Accounts
-- [Transaction.cs](final/FinalProject/Transaction.cs#L1) - Base class for all transactions
-- [Income.cs](final/FinalProject/Income.cs#L1) - Income transactions
-- [Expense.cs](final/FinalProject/Expense.cs#L1) - Expense transactions
-- [MonthlyReport.cs](final/FinalProject/MonthlyReport.cs#L1) - Representation of a monthly report
-- [OverBudgetInfo.cs](final/FinalProject/OverBudgetInfo.cs#L1) - Information about budget overruns
+- [Program.cs](Program.cs#L1) - Entry point; provides a simple console-based UI(menu)
+- [BudgetManager.cs](BudgetManager.cs#L1) - Manages transactions, categories, accounts, budgets, and report generation 
+- [Category.cs](Category.cs#L1) - Represents categories
+- [CategoryBudget.cs](CategoryBudget.cs#L1) - Monthly budgets per category
+- [Account.cs](Account.cs#L1) - Accounts
+- [Transaction.cs](Transaction.cs#L1) - Base class for all transactions
+- [Income.cs](Income.cs#L1) - Income transactions
+- [Expense.cs](Expense.cs#L1) - Expense transactions
+- [MonthlyReport.cs](MonthlyReport.cs#L1) - Representation of a monthly report
+- [OverBudgetInfo.cs](OverBudgetInfo.cs#L1) - Information about budget overruns
 
 
 **Sample Output**
