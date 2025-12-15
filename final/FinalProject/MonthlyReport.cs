@@ -1,3 +1,5 @@
+using System.Linq;
+
 class MonthlyReport
 {
     private int _year;
@@ -7,11 +9,11 @@ class MonthlyReport
     private decimal _netBalance;
 
     private Dictionary<Category, decimal> _categoryExpenseTotals;
-    private List<(Category category, decimal limit, decimal used, decimal over)> _overBudgetCategories;
+    private List<OverBudgetInfo> _overBudgetCategories;
 
     public MonthlyReport(int year, int month, decimal totalIncome, decimal totalExpense, decimal netBalance,
                          Dictionary<Category, decimal> categoryExpenseTotals,
-                         List<(Category, decimal, decimal, decimal)> overBudgetCategories)
+                         List<OverBudgetInfo> overBudgetCategories)
     {
         _year = year;
         _month = month;
@@ -52,7 +54,7 @@ class MonthlyReport
         return _categoryExpenseTotals;
     }
 
-    public List<(Category category, decimal limit, decimal used, decimal over)> GetOverBudgetCategories()
+    public List<OverBudgetInfo> GetOverBudgetCategories()
     {
         return _overBudgetCategories;
     }
@@ -64,7 +66,7 @@ class MonthlyReport
                $"Total Expense: {_totalExpense:C}\n" +
                $"Net Balance: {_netBalance:C}\n" +
                $"Category Expenses: {string.Join(", ", _categoryExpenseTotals.Select(kv => $"{kv.Key.GetName()}: {kv.Value:C}"))}\n" +
-               $"Over Budget Categories: {string.Join(", ", _overBudgetCategories.Select(c => $"{c.category.GetName()} (Limit: {c.limit:C}, Used: {c.used:C}, Over: {c.over:C})"))}";
+               $"Over Budget Categories: {string.Join(", ", _overBudgetCategories.Select(c => $"{c.GetCategory().GetName()} (Limit: {c.GetLimit():C}, Used: {c.GetUsed():C}, Over: {c.GetOver():C})"))}";
     }
 
 }

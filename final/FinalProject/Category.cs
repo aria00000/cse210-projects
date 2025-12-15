@@ -1,5 +1,3 @@
-using System.ComponentModel;
-
 class Category
 {
     private string _name;

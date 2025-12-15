@@ -1,6 +1,3 @@
-using System.Data;
-using System.Security.Principal;
-
 abstract class Transaction
 {
     private DateTime _date;
@@ -48,6 +45,16 @@ abstract class Transaction
     public virtual string GetSummaryString()
     {
         return $"{_date.ToShortDateString()} - {_description}: {_amount:C} ({_category.GetName()})";
+    }
+
+    public bool IsInMonth(int year, int month)
+    {
+        return _date.Year == year && _date.Month == month;
+    }
+
+    public bool MatchesCategory(Category category)
+    {
+        return _category == category;
     }
 
 }
